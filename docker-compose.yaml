@@ -1,0 +1,22 @@
+version:"3.4"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo
+    volumes: mongodb-data:/data/db
+    networks: cat-networks
+  nodejs:
+    container_name: nodejs
+    image: aldocker01/chat-api:1.0.0
+    build: .
+    networks: cat-networks
+    ports:
+      3333:3333
+      environtment:
+        WAIT_HOSTS: mongo:27017
+    volumes:
+      .:/app
+networks:
+  cat-networks:
+volumes:
+  mongodb-data:
