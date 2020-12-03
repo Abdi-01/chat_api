@@ -18,7 +18,7 @@ app.io = io
 app.arrMsg = arrMsg
 
 app.get('/', (req, res) => {
-    res.status(200).send(`<h1>Selamat datang di Chat API</h1>`)
+    res.status(200).send(`<h1>Selamat datang di Chat API 1.0.0</h1>`)
 })
 
 const { chatRouter } = require('./routers')
