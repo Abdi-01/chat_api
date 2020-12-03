@@ -1,16 +1,17 @@
 From node
 
 #Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install app dependencies
 
-COPY package*.json ./
+# COPY package*.json ./
+# Menyalin semua file pada directory kita kedalam directory /app yg telah kita buat
+COPY . /app
 
 RUN npm install
 
-COPY . .
 
 EXPOSE 3333
 
-CMD ["nodemon","index.js"]
+CMD ["node","index.js"]
