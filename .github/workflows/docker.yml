@@ -45,7 +45,7 @@ jobs:
           host: ${{ secrets.HOST }} 
           username: ${{ secrets.USERNAME }} 
           password: ${{ secrets.PASSWORD }} 
-          port: ${{ secrets.PORT }} 
+          port: 22 
           script: |
             docker container stop chat2
             docker container rm chat2
