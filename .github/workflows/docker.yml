@@ -37,7 +37,7 @@ jobs:
       - name: docker push
         run: |
           docker push aldocker01/chat-api:1.0.0
-
+          
        # konek ssh server
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
