@@ -47,7 +47,8 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }} 
           port: 22 
           script: |
-            docker pull aldocker01/chat-api:1.0.0
-            docker container create --name chat2 3333:3333 aldocker01/chat-api:1.0.0
+            docker pull aldocker01/chat-api:latest
+            docker images
+            docker container create --name chat1 3333:3333 aldocker01/chat-api:latest
             docker container ls
-            docker container start chat2
+            docker container start chat1
