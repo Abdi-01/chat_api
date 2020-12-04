@@ -37,3 +37,18 @@ jobs:
       - name: docker push
         run: |
           docker push aldocker01/chat-api:1.0.0
+
+       # konek ssh server
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }} 
+          username: ${{ secrets.USERNAME }} 
+          key: ${{ secrets.PRIVATE_KEY }} 
+          port: 22 
+          script: |
+            docker pull aldocker01/chat-api:1.0.0
+            docker images
+            docker container create --name chat1 3333:3333 aldocker01/chat-api:1.0.0
+            docker container ls
+            docker container start chat1
