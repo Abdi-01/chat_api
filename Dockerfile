@@ -4,7 +4,7 @@ FROM node:12
 WORKDIR /usr/src/app
 
 # COPY package json ke WORKDIR
-COPY package*.json .
+COPY package*.json ./
 
 # Install app dependencies
 RUN npm install
