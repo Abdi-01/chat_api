@@ -4,7 +4,7 @@ const socketIO = require('socket.io')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-const PORT = process.env.PORT || 4444
+const PORT = process.env.PORT || 2020
 
 const app = express()
 app.use(bodyParser())
